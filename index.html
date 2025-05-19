@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ucapan Ulang Tahun</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: none;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      color: #ffffff
+    }
+
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('Black aesthetic wallpaper (Jungkook bts bias) (1).jpeg'); /* Gambar kamu */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      opacity: 1;
+      z-index: -1;
+    }
+
+    .form-section, .message-section {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input, button {
+      width: 90%;
+      max-width: 400px;
+      padding: 12px;
+      margin: 10px auto;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+      display: block;
+    }
+
+    button {
+      background-color: #161414;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #f5e8e8;
+      color: #161414;
+    }
+
+    .message-section {
+  display: none;
+  margin-top: 30px;
+  font-size: 1.3em;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.85); /* latar putih transparan */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="confetti"></div>
+
+  <!-- Bagian Form -->
+  <div class="form-section" id="formSection">
+    <h1>Happy Birthday🎂</h1>
+    <input type="text" id="nameInput" placeholder="Your Name"/>
+    <input type="date" id="birthdateInput" />
+    <button onclick="showMessage()">let's get reading</button>
+  </div>
+
+  <!-- Bagian Ucapan -->
+  <div class="message-section" id="messageSection"></div>
+
+  <script>
+    function showMessage() {
+      const name = document.getElementById("nameInput").value.trim();
+      const birthdate = document.getElementById("birthdateInput").value;
+
+      if (name === "" || birthdate === "") {
+        alert("Tolong isi nama dan tanggal lahir dulu ya!");
+        return;
+      }
+
+      const message = `
+        <p>Selamat ulang tahun, <strong>${name}</strong>!</p>
+        <p>Hari ini (${birthdate}) adalah harimu!</p>
+        <p>Semoga hari yang indah ini membawa kebahagiaan dan peluang baru dalam hidupmu. You look ageless, grow wiser and get more fun every year.         
+            Jangan dengarkan kata orang-orang tentang diri kamu.</p>
+        <p>💖 Teruslah bersinar dan bahagia selalu! 🥳</p>
+      `;
+
+      // Sembunyikan form dan tampilkan ucapan
+      document.getElementById("formSection").style.display = "none";
+      document.getElementById("messageSection").innerHTML = message;
+      document.getElementById("messageSection").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
